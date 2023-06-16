@@ -1,0 +1,28 @@
+name: "Build and Deploy Web Application"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        
+        steps:
+            - uses: actions/checkout@v3
+            - name: Use Node.js
+              uses: actions/setup-node@v3
+              with:
+               node-version: '16.x'
+            - run: npm install
+            - run: npm run build
+
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: amondnet/vercel-action@v20 #deploy
+              with:
+                vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+                vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+                vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 

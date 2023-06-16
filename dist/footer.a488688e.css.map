@@ -1,0 +1,1 @@
+{"mappings":"ACAA","sources":["footer.a488688e.css","src/components/footer/footer.scss"],"sourcesContent":["footer {\n  margin-top: 3rem;\n}\n\n/*# sourceMappingURL=footer.a488688e.css.map */\n","footer{\n    margin-top: 3rem;\n}"],"names":[],"version":3,"file":"footer.a488688e.css.map"}
